@@ -113,9 +113,6 @@ jspm_packages/
 
 # End of https://www.gitignore.io/api/node,macos,visualstudiocode
 
-##
-.vscode
-
 
 */**/saso-template.html
 examples/**/dist
