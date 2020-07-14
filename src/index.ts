@@ -1,12 +1,37 @@
+import * as Controller from './controller'
 import * as Koa from 'koa'
+import * as Model from './model'
+import * as Services from './services'
+import * as bodyParser from 'koa-bodyparser'
+import * as cors from 'koa-cors'
 
-import config from './config'
+import { basicConfig } from './config'
 import routes from './routes'
 
-const App = new Koa()
+const start = () => {
+  const App = new Koa();
 
-App.use(routes)
+  App.context.Controller = Controller
+  App.context.Model = Model
+  App.context.Services = Services
 
-App.listen(config.port, () => {
-  console.log(`Server running on port ${config.port}`)
+  App.use(bodyParser());
+
+  App.use(cors({
+    credentials: true,
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    origin: true,
+  }));
+
+  App.use(routes);
+
+  App.listen(basicConfig.port, () => {
+    console.log(`Server running on port ${basicConfig.port}`)
+  });
+};
+
+start()
+
+process.on('uncaughtException', err => {
+  start()
 })

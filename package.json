@@ -4,6 +4,7 @@
   "description": "koa + typescript 模板项目",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon --exec 'ts-node' src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,8 +22,12 @@
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@types/koa": "^2.11.3",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-cors": "0.0.0",
     "@types/koa-router": "^7.4.1",
+    "@types/md5": "^2.2.0",
     "@types/node": "^14.0.22",
+    "@types/validator": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "@typescript-eslint/parser": "^3.6.0",
     "eslint": "^7.4.0",
@@ -34,13 +39,22 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.6"
   },
   "dependencies": {
     "@koa/router": "^9.3.1",
+    "await-to-js": "^2.1.1",
     "koa": "^2.13.0",
-    "koa-router": "^9.1.0"
+    "koa-bodyparser": "^4.3.0",
+    "koa-cors": "0.0.16",
+    "koa-router": "^9.1.0",
+    "lodash": "^4.17.19",
+    "md5": "^2.2.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.8.0"
   }
 }
