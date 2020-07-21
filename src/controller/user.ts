@@ -20,6 +20,16 @@ class UserController {
       ...data
     }
   }
+
+  static userDetail:Middleware = async (ctx:Context) => {
+    const data = await ctx.Services.UserService.getUserDetail(ctx)
+    ctx.body = {
+      code: 200,
+      msg: 'success',
+      action: 'success',
+      ...data
+    }
+  }
 }
 
 export default UserController

@@ -12,8 +12,9 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
-    "allowJs": true,
+    "allowJs": false,
     "checkJs": false,
+    "noImplicitReturns": false,
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": false,
     "lib": [

@@ -1,10 +1,11 @@
-import { hash, parseAccountToUcid } from '../util/index';
+import { hash, parseAccountToUcid } from '../../util/index';
 
-import Auth from '../util/auth'
+import Auth from '../../util/auth';
 import { Context } from 'koa';
-import apiRes from '../util/api-res';
+import apiRes from '../../util/api-res';
 import { get } from 'lodash';
 import to from 'await-to-js';
+import userUtil from '../../util/user'
 
 const DEFAULT_AVATAR_URL = 'http://ww1.sinaimg.cn/large/00749HCsly1fwofq2t1kaj30qn0qnaai.jpg';
 
@@ -71,9 +72,24 @@ class User {
       ctx.cookies.set('ucid', ucid, { maxAge: 100 * 86400 * 1000, httpOnly: false });
       ctx.cookies.set('nickname', nickname, { maxAge: 100 * 86400 * 1000, httpOnly: false });
       ctx.cookies.set('account', account, { maxAge: 100 * 86400 * 1000, httpOnly: false });
-      return showResult({ ucid, nickname, account, avatarUrl, registerType }) || {}
+      return showResult({ ucid, nickname, account, avatarUrl, registerType }) || {};
     }
-    return showError('密码错误')
+    return showError('密码错误');
+  };
+
+  static getUserDetail = async (ctx: Context) => {
+    const request = ctx.request.query
+    const cookieAccount = get(ctx.request, ['fee', 'user', 'account'], '');
+    // 没有指定account则返回当前登录用户信息
+    const reqAccount = get(request, ['account'], cookieAccount);
+
+    const rawUser = await ctx.Model.UserModel.findOne({
+      where: {
+        account: reqAccount
+      }
+    });
+    const user = userUtil.formatRecord(rawUser);
+    return showResult(user)
   };
 }
 
