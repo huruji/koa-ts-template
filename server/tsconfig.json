@@ -25,29 +25,32 @@
     "baseUrl": "./",
     "paths": {
       "@controller/*": [
-        "server/src/controller/*"
+        "src/controller/*"
       ],
       "@model/*": [
-        "server/src/model/*"
+        "src/model/*"
       ],
       "@services/*": [
-        "server/src/services/*"
+        "src/services/*"
       ],
       "@util/*": [
         "src/util/*"
       ],
       "@config/*": [
-        "server/src/config/*"
+        "src/config/*"
       ],
       "@constants/*": [
-        "server/src/constants/*"
+        "src/constants/*"
       ],
       "@lib/*": [
-        "server/src/lib/*"
+        "src/lib/*"
       ]
     }
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "index.ts",
+    "types/**/*",
+    "server/**/*"
   ]
 }

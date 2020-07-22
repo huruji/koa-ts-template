@@ -1,8 +1,7 @@
+// import Logger from '~/src/library/logger'
+import * as _ from 'lodash'
 import * as dateFns from 'date-fns'
 import * as md5 from 'md5'
-
-// import Logger from '~/src/library/logger'
-import _ from 'lodash'
 
 const MD5_SALT = '1111111111111111111111111111'
 

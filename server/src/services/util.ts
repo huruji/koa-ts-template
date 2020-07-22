@@ -1,8 +1,9 @@
+import * as _ from 'lodash'
+import * as dateFns from 'date-fns'
+import * as md5 from 'md5'
+
 import Knex from '~/src/library/mysql'
 import Logger from '~/src/library/logger'
-import _ from 'lodash'
-import dateFns from 'date-fns'
-import md5 from 'md5'
 
 const MD5_SALT = '12345678901234567890123'
 const DEFAULT_PASSWORD = 'kehaolea'

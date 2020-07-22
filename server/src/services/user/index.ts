@@ -5,6 +5,7 @@ import { Context } from 'koa';
 import apiRes from '../../util/api-res';
 import { get } from 'lodash';
 import to from 'await-to-js';
+import { type } from 'os';
 import userUtil from '../../util/user'
 
 const DEFAULT_AVATAR_URL = 'http://ww1.sinaimg.cn/large/00749HCsly1fwofq2t1kaj30qn0qnaai.jpg';

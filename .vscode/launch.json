@@ -11,9 +11,10 @@
       "env": {
         "NODE_ENV": "dev"
       },
-      "runtimeArgs": ["-r", "ts-node/register"],
-      "args": ["${workspaceFolder}/src/index.ts"],
+      "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+      "args": ["${workspaceFolder}/server/src/index.ts"],
       "restart": true,
+      "cwd": "${workspaceFolder}/server",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
