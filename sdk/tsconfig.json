@@ -24,31 +24,10 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@controller/*": [
-        "server/src/controller/*"
-      ],
-      "@model/*": [
-        "server/src/model/*"
-      ],
-      "@services/*": [
-        "server/src/services/*"
-      ],
-      "@util/*": [
-        "src/util/*"
-      ],
-      "@config/*": [
-        "server/src/config/*"
-      ],
-      "@constants/*": [
-        "server/src/constants/*"
-      ],
-      "@lib/*": [
-        "server/src/lib/*"
-      ]
     }
   },
   "include": [
     "src/**/*",
-    "sdk/**/*"
+    "demo/**/*"
   ]
 }
